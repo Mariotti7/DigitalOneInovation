@@ -21,11 +21,12 @@
 * Setando os parâmetros do método 'printSum' no arquivo de teste 'math.spec.js': 
     * const req = {}
     * const res = {
-        load: sinon.spy()// função load utilizando um método do sinon chamado spy
+        load: sinon.spy()// função load utilizando um método do sinon chamado spy;
     }
-    * const math = new Math() // instanciar novamente a classe Math
-    * math.printSum(req, res, 5, 5) // invocando o método
-    * expect(res.load.calledOnce).to.be.true //utilizando o expect cria-se a função espiã que traz informações se a função foi chamada ou não
+    * const math = new Math() // instanciar novamente a classe Math;
+    * math.printSum(req, res, 5, 5) // invocando o método;
+    * expect(res.load.calledOnce).to.be.true //utilizando o expect cria-se a função espiã que traz informações se a função foi chamada ou não;
+* É possível substituir o método: sinon.stub
 
 ### math.js
 

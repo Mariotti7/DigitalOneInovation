@@ -19,21 +19,21 @@
 
 * Funciona como um método construtor:
 
-    class Pessoa
-        def initialize(nome)
-            @nome = nome
+         class Pessoa
+            def initialize(nome)
+                 @nome = nome
+            end
+
+            def dizer_ola
+                puts "Olá, #{@nome}!"
+            end
         end
 
-        def dizer_ola
-            puts "Olá, #{@nome}!"
-        end
-    end
+        leandro = Pessoa.new("Leandro")
+        heitor = Pessoa.new("Heitor")
 
-    leandro = Pessoa.new("Leandro")
-    heitor = Pessoa.new("Heitor")
-
-    puts leandro.dizer_ola
-    puts heitor.dizer_ola
+        puts leandro.dizer_ola
+        puts heitor.dizer_ola
 
 ### Getters e Setters
 

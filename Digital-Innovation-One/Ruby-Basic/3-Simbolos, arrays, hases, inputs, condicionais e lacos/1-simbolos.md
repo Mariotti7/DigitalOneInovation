@@ -11,11 +11,11 @@
 
 * Abra o irb no terminal e digite:
 
-:"Ruby"
+        :"Ruby"
 
 * Retornará: 
 
-:Ruby
+        :Ruby
 
 * Recomendável digitar sem aspas :rails;
 * Diferença é que sem as aspas o id do objeto não muda;

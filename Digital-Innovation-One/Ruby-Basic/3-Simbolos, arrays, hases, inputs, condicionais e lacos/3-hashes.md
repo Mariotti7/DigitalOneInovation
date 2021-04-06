@@ -9,28 +9,28 @@
 
 * Duas formas de escrever:
 
-    hash = {}
-    hash = hash.new
+        hash = {}
+        hash = hash.new
 
 * Sua inicialização:
 
-    hash = {
+        hash = {
         chave => valor,
         chave => valor,
-    }
+        }
 
     // ou 
 
-    hash = {
+        hash = {
         chave: valor,
         chave: valor,
-    }
+        }
 
 * A chave é entre aspas ou você pode substituir por um simbolo(menos memória, id imutável do objeto):
-    pessoa = {
+       pessoa = {
         "nome" => "Saitama",
         :sobrenome => "Bold"
-    }
+         }
 
 * Acessar o index do objeto:
 

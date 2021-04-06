@@ -8,37 +8,37 @@
 
 * Duas formas de escrever:
 
-    lista = []
-    lista = Array.new
+        lista = []
+        lista = Array.new
 
 * Podem ter valores de diferentes tipos:
 
-    lista = [1, 2, "3"]
+        lista = [1, 2, "3"]
 
 * Duas formas de incluir novos itens no array:
 
-    lista << "novo item"
-    lista.append("novo item") // Não funcionou muito bem
+        lista << "novo item"
+        lista.append("novo item") // Não funcionou muito bem
 
 * Tamanho do array:
 
-    lista.length
+        lista.length
 
 * Verificar se o array está vazio:
 
-    lista.empty? 
+        lista.empty? 
 
 * Pegar o primeiro valor:
 
-    lista.first
+        lista.first
 
 * Pegar o último valor:
 
-    lista.last
+        lista.last
 
 * Concatenar arrays
 
-    lista_1 = [1, 2, 3]
-    lista_2 = [4, 5, 6]
-    resultado = lista_1 + lista_2
+        lista_1 = [1, 2, 3]
+        lista_2 = [4, 5, 6]
+        resultado = lista_1 + lista_2
     

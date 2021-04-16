@@ -10,4 +10,4 @@ const Participante = sequelize.define('participante', {
 module.exports = Participante
 
 const Evento = require('./evento')
-Participante.belongsToMany(Evento, {through: 'evento_participante'});  // through garante da string
+Participante.belongsToMany(Evento, {through: 'evento_participante'});  // through garante nome da string

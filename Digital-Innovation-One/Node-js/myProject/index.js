@@ -10,3 +10,4 @@ app.get('/', async(req, res)=>{
 })
 
 app.listen(port, ()=> console.log('App is avaiable on http://localhost:3000'))
+

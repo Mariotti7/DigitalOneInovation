@@ -92,3 +92,85 @@
         }
         
         module.exports = models
+
+ - 1_create.js
+
+        const models = require('./models')
+
+        async function create(){
+          await models.sequelize.sync({force: true})
+          await models.sequelize.close()
+
+          console.log("Banco sincronizado");
+        }
+        create()
+
+- 2_insert.js
+
+        const models = require('./models')
+
+        async function insert(){
+      
+        //Eventos
+        const eventoNode = await models.evento.create({nome: 'Encontro de Nodejs', data: '2021-04-15'})
+        const eventoPostgres = await models.evento.create({nome: 'Encontro de Postgresql', data:      '2021-05-02'})
+        const eventoJavascript = await models.evento.create({nome: 'Encontro de Javascript', data:      '2021-04-25'}) 
+
+        //Participantes
+        const carlos  = await models.participante.create({nome: 'Carlos'})
+        const augusto = await models.participante.create({nome: 'Augusto'})
+        const heitor = await models.participante.create({nome: 'Heitor'})
+        const rafael  = await models.participante.create({nome: 'Rafael'})
+
+
+        //Participantes em eventos
+        await eventoNode.setParticipantes([carlos, augusto, heitor])
+        await eventoPostgres.setParticipantes([heitor, rafael])
+        await eventoJavascript.setParticipantes([augusto, rafael])
+
+        await models.sequelize.close()
+
+        console.log("Dados Inseridos");
+            }
+            insert()
+
+- 3_select.js
+
+        const models = require('./models')
+
+        async function select(){
+          console.log("\n");
+
+          //Eventos
+          const eventos = await models.evento.findAll()
+          eventos.forEach((evento) => {
+            console.log("Evento: ", evento.nome)
+          })
+          console.log("\n");
+
+          //Participantes
+          const participantes  = await models.participante.findAll()
+          participantes.forEach((participante) => {
+            console.log("Participante: ", participante.nome)
+          })
+          console.log("\n");
+
+          //Participantes em eventos
+          const eventosComParticipantes = await models.evento.findAll({
+            include: [
+              {
+                model: models.participante
+              }
+            ]
+          })
+          eventosComParticipantes.forEach((evento) => {
+            console.log("Evento: ", evento.nome, evento.data)
+            evento.participantes.forEach((participante) => {
+              console.log("----------> Participante: ", participante.nome)
+            })
+          })
+          console.log("\n");
+
+          await models.sequelize.close()
+        }
+        select()
